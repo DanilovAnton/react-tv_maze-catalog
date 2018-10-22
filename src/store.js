@@ -1,15 +1,17 @@
 import rootReducer from './reducers';
 import { createStore, applyMiddleware, compose } from 'redux';
-import { tvmazeFetchMiddleware } from './middlewares/searchMiddleware.js'
+import {
+  tvmazeFetchMiddleware,
+  serialFetchMiddleware
+} from './middlewares/searchMiddleware.js';
 
 export default () => {
   const store = createStore(
-    rootReducer,    
+    rootReducer,
     compose(
-      applyMiddleware(tvmazeFetchMiddleware),    
-      window.__REDUX_DEVTOOLS_EXTENSION__()       
+      applyMiddleware(tvmazeFetchMiddleware, serialFetchMiddleware),
+      window.__REDUX_DEVTOOLS_EXTENSION__()
     )
-    
   );
 
   return store;

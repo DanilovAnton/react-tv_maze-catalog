@@ -54,7 +54,8 @@ class Search extends Component {
 }
 
 const mapStateToProps = state => ({
-  data: state.search.result
+  data: state.search.result,
+  isFetching: state.search.isFetching
 });
 
 const mapDispatchToProps = {

@@ -1,7 +1,7 @@
 import { handleActions } from 'redux-actions';
 import { combineReducers } from 'redux';
 import {
-  getSerialByIdRequrst,
+  getSerialByIdRequest,
   getSerialByIdSuccess,
   getSerialByIdFailure
 } from '../actions';
@@ -9,7 +9,7 @@ import {
 
 const entities = handleActions(
     {
-      [getSerialByIdRequrst]: () => [],
+      [getSerialByIdRequest]: () => [],
       [getSerialByIdSuccess]: (state, action) => action.payload
     },
     []
@@ -17,7 +17,7 @@ const entities = handleActions(
   
   const isFetching = handleActions(
     {
-      [getSerialByIdRequrst]: () => true,
+      [getSerialByIdRequest]: () => true,
       [getSerialByIdSuccess]: () => false,
       [getSerialByIdFailure]: () => false
     },
@@ -26,7 +26,7 @@ const entities = handleActions(
   
   const error = handleActions(
     {
-      [getSerialByIdRequrst]: () => null,
+      [getSerialByIdRequest]: () => null,
       [getSerialByIdFailure]: (state, action) => action.payload
     },
     null
