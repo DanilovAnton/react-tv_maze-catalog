@@ -25,3 +25,5 @@ export const serialFetchMiddleware = store => next => action => {
   }
   next(action);
 };
+
+export default tvmazeFetchMiddleware;
